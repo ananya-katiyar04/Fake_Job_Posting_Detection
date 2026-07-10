@@ -1,8 +1,11 @@
 import streamlit as st
 import joblib
+import os
 
-model = joblib.load("../models/fake_job_model.pkl")
-vectorizer = joblib.load("../models/tfidf_vectorizer.pkl")
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+model = joblib.load(os.path.join(BASE_DIR, "..", "models", "fake_job_model.pkl"))
+vectorizer = joblib.load(os.path.join(BASE_DIR, "..", "models", "tfidf_vectorizer.pkl"))
 
 st.title("Fake Job Posting Detection")
 st.write(
