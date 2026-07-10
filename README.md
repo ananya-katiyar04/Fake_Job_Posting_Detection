@@ -1,51 +1,39 @@
 # Fake Job Posting Detection using Machine Learning
 
 ## Overview
-This project detects whether a job posting is Genuine or Fake using Machine Learning and Natural Language Processing (NLP).
+This project detects whether a job posting is Genuine or Fake using Natural Language Processing (NLP) and Machine Learning.
 
 ## Features
-- Detects Fake and Genuine Job Postings
-- User-friendly Streamlit Web App
-- Machine Learning based Prediction
-- NLP using TF-IDF Vectorizer
-- Fast and Interactive Interface
+- Detects Fake and Genuine job postings
+- TF-IDF Vectorization
+- Machine Learning Classification
+- Streamlit Web Application
+- Confidence Score
+- User-friendly Interface
 
-## Tech Stack
+## Technologies Used
 - Python
-- Scikit-learn
 - Pandas
-- NumPy
+- Scikit-learn
 - Streamlit
 - Joblib
-- GitHub
+- NLP (TF-IDF)
+
+## Machine Learning Models
+- Random Forest
+- Logistic Regression
+- Naive Bayes
 
 ## Project Structure
 
 Fake_Job_Posting_Detection/
-│
-├── data/
-├── models/
-├── notebooks/
-├── src/
-│ └── app.py
-├── requirements.txt
-└── README.md
+│── data/
+│── models/
+│── notebooks/
+│── src/
+│── README.md
+│── requirements.txt
 
-## How to Run
+## Author
 
-```bash
-pip install -r requirements.txt
-streamlit run src/app.py
-```
-
-## Future Improvements
-
-- Confidence Score
-- Company Verification
-- Salary Analysis
-- Modern Dashboard
-- AI-based Suggestions
-
-## Developed By
-
-**Ananya Katiyar**
+Ananya Katiyar
