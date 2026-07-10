@@ -18,8 +18,12 @@ job_description = st.text_area("Enter Job Description")
 if st.button("Predict"):
     text = vectorizer.transform([job_description])
     prediction = model.predict(text)
+    probability = model.predict_proba(text)
+confidence = max(probability[0]) * 100
 
-    if prediction[0] == 1:
-        st.error("⚠ Fake Job Posting")
-    else:
-        st.success("✅ Genuine Job Posting")
+if prediction[0] == 1:
+    st.error("❌ Fake Job Posting")
+    st.metric("Confidence", f"{confidence:.2f}%")
+else:
+    st.success("✅ Genuine Job Posting")
+    st.metric("Confidence", f"{confidence:.2f}%")
