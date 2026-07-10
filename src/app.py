@@ -31,13 +31,19 @@ job_description = st.text_area(
 
 if st.button("🔍 Predict Job"):
     text = vectorizer.transform([job_description])
-    prediction = model.predict(text)
 
-    if prediction[0] == 1:
-        st.error("❌ Fake Job Posting")
-    else:
-        st.success("✅ Genuine Job Posting")
-        st.markdown("---")
+prediction = model.predict(text)
+probability = model.predict_proba(text)
+
+confidence = max(probability[0]) * 100
+
+if prediction[0] == 1:
+    st.error("❌ Fake Job Posting")
+    st.write(f"**Confidence:** {confidence:.2f}%")
+else:
+    st.success("✅ Genuine Job Posting")
+    st.write(f"**Confidence:** {confidence:.2f}%")
+    st.markdown("---")
 
 st.subheader("🛡️ How to Identify Fake Job Postings")
 
@@ -53,4 +59,4 @@ st.info("""
 ✅ Research the company before applying.
 """)
 st.markdown("---")
-st.caption("👨‍💻 Developed by Ananya Katiyar | Machine Learning Project")
+# st.caption("👨‍💻 Developed by Ananya Katiyar | Machine Learning Project")
